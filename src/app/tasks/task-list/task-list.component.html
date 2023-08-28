@@ -1,0 +1,17 @@
+<div *ngFor="let task of allTasks">
+  <h2>{{ task.title }}</h2>
+  <p>{{ task.description }}</p>
+  <p> État: <span [appTaskColor]="task.state">{{ task.state }} </span></p>
+  <p> {{ task.date | customDate }}</p>
+</div>
+
+
+<h1>Tâches finis</h1>
+<div *ngFor="let task of archivedTasks">
+  <h2>{{ task.title }}</h2>
+  <p>{{ task.description }}</p>
+  <p> État: <span [appTaskColor]="task.state">{{ task.state }} </span></p>
+  <p> {{ task.date | customDate }}</p>
+</div>
+
+
