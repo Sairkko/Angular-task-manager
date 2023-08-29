@@ -5,7 +5,7 @@ import {Task, TaskState} from '../model/task.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ByStatutTaskListService extends CRUDTaskListService implements ByStatutTaskListService {
+export class ByStatutTaskListService extends CRUDTaskListService {
   getTasksByStatus(): Task[] {
     return this.readTasks().filter(task => task.state === TaskState.TERMINEE);
   }

@@ -5,7 +5,7 @@ import {Task, TaskState} from '../model/task.model';
 @Injectable({
   providedIn: 'root'
 })
-export class CRUDTaskListService implements CRUDTaskListService {
+export class CRUDTaskListService {
   public Date: Date = new Date();
 
   private taskList: Task[] = [
