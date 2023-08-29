@@ -2,11 +2,12 @@
 import {Injectable} from '@angular/core';
 import {Task, TaskState} from '../model/task.model';
 import {CRUDTaskService} from "./crud-task-service";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-  
+
 export class CRUDTaskListService implements CRUDTaskService {
   public Date: Date = new Date();
 
@@ -18,8 +19,8 @@ export class CRUDTaskListService implements CRUDTaskService {
     new Task('T5: ROAD TO LIGUE 1 Saint-Étienne', 'Ils sont NUUUUUUUL', TaskState.TERMINEE, this.Date)
   ];
 
-  readTasks(): Task[] {
-    return this.taskList;
+  readTasks(): Observable<Task[]> {
+    return of(this.taskList); // Wrap the array in an observable
   }
 
   createTask(task: Task): void {
