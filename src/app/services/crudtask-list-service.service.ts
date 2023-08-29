@@ -6,7 +6,11 @@ import {CRUDTaskService} from "./crud-task-service";
 @Injectable({
   providedIn: 'root'
 })
+<<<<<<< HEAD
 export class CRUDTaskListService implements CRUDTaskService {
+=======
+export class CRUDTaskListService {
+>>>>>>> b39567d0c1a99166ad83e955c527da8a5845a0c9
   public Date: Date = new Date();
 
   private taskList: Task[] = [
