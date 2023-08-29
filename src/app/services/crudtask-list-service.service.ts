@@ -1,11 +1,12 @@
 // crud-task-list.service.ts
 import {Injectable} from '@angular/core';
 import {Task, TaskState} from '../model/task.model';
+import {CRUDTaskService} from "./crud-task-service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CRUDTaskListService {
+export class CRUDTaskListService implements CRUDTaskService {
   public Date: Date = new Date();
 
   private taskList: Task[] = [
@@ -18,5 +19,14 @@ export class CRUDTaskListService {
 
   readTasks(): Task[] {
     return this.taskList;
+  }
+
+  createTask(task: Task): void {
+  }
+
+  deleteTask(task: Task): void {
+  }
+
+  updateTask(task: Task): void {
   }
 }
