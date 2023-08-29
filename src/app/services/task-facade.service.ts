@@ -9,7 +9,6 @@ import { Task, TaskState } from '../model/task.model';
 })
 export class TaskFacade {
   constructor(
-    private crudService: CRUDTaskListService,
     private byStatutService: ByStatutTaskListService
   ) {}
 
