@@ -1,0 +1,32 @@
+<form [formGroup]="taskForm" (submit)="onSubmit()">
+  <div>
+    <div *ngIf="taskForm.invalid && (taskForm.dirty || taskForm.touched)">
+      <div *ngIf="taskForm.controls.title.errors?.['minLength']">
+        Le champs doit faire au moins 1 caractère
+      </div>
+      <div *ngIf="taskForm.controls.title.errors?.['maxLength']">
+        Le champs doit faire au max 255 caractère
+      </div>
+    </div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" formControlName="title" />
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <div>
+    <label for="state">State:</label>
+    <select id="state" formControlName="state">
+      <option value="" disabled>Select state</option>
+      <option value="A_FAIRE">A faire</option>
+      <option value="EN_COURS">En cours</option>
+      <option value="TERMINEE">Terminée</option>
+    </select>
+  </div>
+  <div>
+    <label for="date">Date:</label>
+    <input type="text" id="date" formControlName="date"/>
+  </div>
+  <button type="submit" [disabled]="taskForm.invalid">Add Task</button>
+</form>

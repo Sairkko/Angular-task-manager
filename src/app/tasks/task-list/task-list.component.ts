@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { Task } from '../../model/task.model';
 import { TaskFacade } from '../../services/task-facade.service';
 
@@ -7,9 +7,10 @@ import { TaskFacade } from '../../services/task-facade.service';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent implements OnInit {
+export class TaskListComponent implements OnInit, OnChanges {
   allTasks: Task[] = [];
   archivedTasks: Task[] = [];
+  @Input() task: Task[] = [];
 
   constructor(private taskFacade: TaskFacade) {}
 
@@ -21,5 +22,10 @@ export class TaskListComponent implements OnInit {
     this.taskFacade.getTasksByStatus().subscribe(tasks => {
       this.archivedTasks = tasks;
     });
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['task']) {
+      this.allTasks = changes['task'].currentValue;
+    }
   }
 }

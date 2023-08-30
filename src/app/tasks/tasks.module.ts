@@ -6,6 +6,8 @@ import {MainTaskComponent} from "./main-task/main-task.component";
 import {TaskListComponent} from "./task-list/task-list.component";
 import {TaskColorDirective} from "../task-color.directive";
 import {CustomDatePipe} from "../custom-date.pipe";
+import {AddTaskFormModule} from "../add-task/add-task-form.module";
+import {MainAddTaskFormComponent} from "../add-task/main-add-task-form/main-add-task-form.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {CustomDatePipe} from "../custom-date.pipe";
   ],
   imports: [
     CommonModule,
-    TasksRoutingModule
+    TasksRoutingModule,
+    AddTaskFormModule
   ],
   exports: []
 })
