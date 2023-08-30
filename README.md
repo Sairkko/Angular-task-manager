@@ -57,3 +57,5 @@ ngOnInit(): void {
 ````
 
 Ne pas oublier de configurer le CORS (de mon côté on utilise AWS au taff donc on doit autoriser tous les CORS sinon l'URL de ne marchera pas)
+
+### LIEN DEPOT GITHUB : https://github.com/Sairkko/Angular-task-manager
